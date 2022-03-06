@@ -7,11 +7,17 @@ public class AreaAndSkills {
 	private int level; //from a list
 	private int additionalSkills; //from a list
 	
-	public AreaAndSkills(String d, String s, int l, int a) {
+	public AreaAndSkills(String d, String s) {
 		this.department = d;
 		this.specialism = s;
-		this.level = l;
-		this.additionalSkills = a;
+		//this.level = l;
+		//this.additionalSkills = a;
+		
+	}
+	
+	public String toString() {
+		return (department + ": " +specialism);
+		
 		
 	}
 }

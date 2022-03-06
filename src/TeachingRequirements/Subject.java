@@ -2,9 +2,9 @@ package TeachingRequirements;
 
 public class Subject {
 
-	private String Name;
-	private int contactNumber;
-	private int ID;
-	private String specialismSubject;
-	private int trainingReq;
+	private String department;
+	private String specialism;
+	private int level; //from level list
+	private int additionalSkills; //from additional skills list
+	
 }

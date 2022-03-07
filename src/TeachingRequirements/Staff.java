@@ -18,7 +18,18 @@ public class Staff {
 		this.ID = id;		
 	}
 	
-	//test
+		public String getName() {
+			return name;
+		}
+		
+		public String getcontactNumber(){
+			return contactNumber;
+		}
+		
+		public String getID() {
+			return ID;
+		}
+	
 	
 	public String ToString() {
 		return (name + ": " + contactNumber + ": " + ID);

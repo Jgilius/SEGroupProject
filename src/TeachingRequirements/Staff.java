@@ -18,6 +18,8 @@ public class Staff {
 		this.ID = id;		
 	}
 	
+	//test
+	
 	public String ToString() {
 		return (name + ": " + contactNumber + ": " + ID);
 	}

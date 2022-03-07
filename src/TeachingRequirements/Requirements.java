@@ -3,32 +3,37 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+
 import java.util.Arrays;
 
 public class Requirements {
 	
-	AreaAndSkills[] areaAndSkillsList = new AreaAndSkills[10];
-	int nStaff =0;
+	String name;
+	String sub;
+	String id;
+	int nStaff = 0;
+	Staff staffList [] = new Staff[10];
+	int i;
 	
-	private int requiredSkills;
-	
-	public Requirements() {
+	public Requirements () {
 		
 	}
-
 	
-	public void readSubjectsFromFile() {
+	public void adminInterface() {
+		
 		FileReader fr = null;
 		try {
-			String requirementsFile = "C:\\Users\\Hanna\\OneDrive\\1. MSc IT\\Semester 2\\Software Engineering\\Class_Director_Requirements_List.txt";
+			String requirementsFile = "C:\\Users\\Hanna\\OneDrive\\1. MSc IT\\Semester 2\\Software Engineering\\StaffNames.txt";
 			fr = new FileReader(requirementsFile);
 			Scanner s = new Scanner(fr);
 			while(s.hasNextLine()) {
 				String line = s.nextLine();
 				String[] tokens = line.split(",");
-				String dept = tokens[0];
-				String subject = tokens[1];
-				areaAndSkillsList[nStaff++] = new AreaAndSkills(dept, subject);
+				String name = tokens[0];
+				String sub = tokens[1];
+				staffList[nStaff++] = new Staff(name, sub, id);
 			}	
 		
 		}catch(FileNotFoundException e) {
@@ -42,17 +47,61 @@ public class Requirements {
 			catch(IOException e) {
 				e.printStackTrace();
 			}
+			}
 		}
-	}
 		
-	if(nStaff>0) {
+		if(nStaff>0) {
+			for (i = 0; i<nStaff; i++) {
+				System.out.println(staffList[i]);
+				
+			}	
+		}
 		
-		for (int i = 0; i<nStaff; i++) {
-			System.out.println(areaAndSkillsList[i]);
+		for (;;) {
+			System.out.println();
+			System.out.println("Choose a command.");
+			String option = JOptionPane.showInputDialog("(S)ubject, (A)vailability, (T)raining, (Q)uit");
+			
+			char c = option.charAt(0);
+			if (c == 'q')
+				return;
+			
+			//TODO we need to refactor this for less repeated code - tried to put in a method but then we can't access
+			//the subject that the user types in - SAD :( 
+			
+			String subject = JOptionPane.showInputDialog("Subject: ");
+			switch(c) {
+			case 'S': {
+				if (subject.equals("maths")) {
+					if(nStaff>0) {
+						for (i = 0; i<nStaff; i++) {
+							if (staffList[i].getSub().equals("maths")) {
+								System.out.println("Teachers who teach " + subject + ": " + staffList[i].getName());
+							}
+						}
+					}
+				}
+						
+				else if(subject.equals("english")) {
+					if(nStaff>0) {
+						for (i = 0; i<nStaff; i++) {
+							if (staffList[i].getSub().equals("english")) {
+								System.out.println("Teachers who teach " + subject + ": " + staffList[i].getName());
+							}	
+						}
+				
+					}
+		
+			}
+			
 		}
 	}
 	
+	}
 	
-}
+			
+		}
+	
 
 }
+

@@ -3,6 +3,7 @@ package TeachingRequirements;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.util.Scanner;
 
 public class ReadClass {
@@ -40,12 +41,19 @@ public class ReadClass {
 				e.printStackTrace();
 			}
 		}
-	}	
-	if(nStaff>0) {
-		for (int i = 0; i<nStaff; i++) {
-			System.out.println(staffList[i]);
 		}
+	}	
+	public void print(PrintStream ps) {
+		if(nStaff>0) {
+			for (int i = 0; i<nStaff; i++) {
+				ps.print(staffList[i]);
+			}
+		
+		
 	}
+	
 	}
+
+	
 
 }

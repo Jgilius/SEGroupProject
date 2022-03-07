@@ -8,9 +8,13 @@ public class Main {
 		//Requirements requirements = new Requirements();
 		//requirements.readSubjectsFromFile();
 		
-		ReadClass staffFile = new ReadClass();
-		staffFile.readStaffFromFile();
+		//ReadClass staffFile = new ReadClass();
+		//staffFile.print(System.err);
+		//System.err.println("Staff List: ");
 		
+		
+		Requirements test = new Requirements();
+		test.adminInterface();
 		
 		
 		

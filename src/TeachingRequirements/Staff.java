@@ -7,33 +7,33 @@ import java.util.Scanner;
 
 public class Staff {
 	private String name;
-	private String contactNumber;
+	private String subject;
 	private String ID;
 	private String specialismSubject;
 	private int trainingReq;
 	
-	public Staff(String n, String c, String id) {
+	public Staff(String n, String sub, String id) {
 		this.name = n;
-		this.contactNumber = c;
+		this.subject = sub;
 		this.ID = id;		
 	}
 	
 		public String getName() {
 			return name;
 		}
-		
-		public String getcontactNumber(){
-			return contactNumber;
+	
+		public String getSub() {
+			return subject;
 		}
+	
 		
 		public String getID() {
 			return ID;
 		}
-	
-	
-	public String ToString() {
-		return (name + ": " + contactNumber + ": " + ID);
-	}
+		
+		public String toString() {
+			return (name + " " + subject);
+		}
 	
 
 

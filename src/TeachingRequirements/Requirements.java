@@ -14,7 +14,8 @@ public class Requirements {
 	String sub;
 	String id;
 	int nStaff = 0;
-	Staff staffList [] = new Staff[10];
+	Staff staffList [] = new Staff[20];
+	Subject subjectList[] = new Subject[20];
 	int i;
 	
 	public Requirements () {
@@ -34,6 +35,7 @@ public class Requirements {
 				String name = tokens[0];
 				String sub = tokens[1];
 				staffList[nStaff++] = new Staff(name, sub, id);
+				subjectList[nStaff++] = new Subject(name, sub);
 			}	
 		
 		}catch(FileNotFoundException e) {
@@ -49,6 +51,15 @@ public class Requirements {
 			}
 			}
 		}
+		
+		/*if(nStaff>0) {
+			for (i = 0; i<nStaff; i++) {
+				System.out.println(subjectList[i]);
+				
+			}	
+		} */
+		
+		
 		
 		if(nStaff>0) {
 			for (i = 0; i<nStaff; i++) {
@@ -72,7 +83,7 @@ public class Requirements {
 			String subject = JOptionPane.showInputDialog("Subject: ");
 			switch(c) {
 			case 'S': {
-				if (subject.equals("maths")) {
+				if (subject.equals(subjectList[i].getSub())) {
 					if(nStaff>0) {
 						for (i = 0; i<nStaff; i++) {
 							if (staffList[i].getSub().equals("maths")) {

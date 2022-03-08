@@ -8,14 +8,13 @@ import java.util.Scanner;
 public class Staff {
 	private String name;
 	private String subject;
-	private String ID;
-	private String specialismSubject;
-	private int trainingReq;
+	private String training;
 	
-	public Staff(String n, String sub, String id) {
+	
+	public Staff(String n, String sub, String training) {
 		this.name = n;
 		this.subject = sub;
-		this.ID = id;		
+		this.training = training;		
 	}
 	
 		public String getName() {
@@ -27,12 +26,12 @@ public class Staff {
 		}
 	
 		
-		public String getID() {
-			return ID;
+		public String getTraining() {
+			return training;
 		}
 		
 		public String toString() {
-			return (name + " " + subject);
+			return (name + " " + subject + " " + training);
 		}
 	
 

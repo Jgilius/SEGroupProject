@@ -82,9 +82,7 @@ public class Requirements {
 						if (name.equals(staffList[i].getName()) && staffList[i].getTraining().equals("no")) {
 							System.out.println(name + " should be booked onto training.");
 				}
-				else if (nStaff>0) {
-					for (i = 0; i<nStaff; i++) {
-						if (name.equals(staffList[i].getName()) && staffList[i].getTraining().equals("yes")) {
+						else if (name.equals(staffList[i].getName()) && staffList[i].getTraining().equals("yes")) {
 							System.out.println(name + " has already completed their training to teach "  + staffList[i].getSub());
 				
 				
@@ -135,7 +133,7 @@ public class Requirements {
 				
 	
 				}
-				}
+				
 	}
-}
+
 
